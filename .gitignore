@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads
+server/uploads/
+server/logs/
+
+# ML Model files
+ml-service/model/*.pkl
+ml-service/data/*.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Testing
+coverage/
+.nyc_output/
+

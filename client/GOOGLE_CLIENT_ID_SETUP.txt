@@ -1,0 +1,11 @@
+INSTRUCTIONS: Google Client ID Setup
+
+1. Open client/.env file
+2. Find the line: VITE_GOOGLE_CLIENT_ID=your-google-client-id-here.apps.googleusercontent.com
+3. Replace "your-google-client-id-here.apps.googleusercontent.com" with your actual Google Client ID
+4. Example: VITE_GOOGLE_CLIENT_ID=123456789-abcdefghijklmnop.apps.googleusercontent.com
+5. Save the file
+6. Restart the frontend server (npm run dev)
+
+After restarting, Google login/register buttons will appear and work!
+
