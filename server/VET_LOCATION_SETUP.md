@@ -78,3 +78,9 @@ If vets still don't show up:
 3. Check server logs for errors
 4. Verify coordinates are correct (lat should be ~22.7, lng should be ~75.8 for Indore)
 
+
+
+
+
+
+

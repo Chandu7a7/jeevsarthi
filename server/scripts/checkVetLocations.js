@@ -86,3 +86,9 @@ const checkVetLocations = async () => {
 
 checkVetLocations();
 
+
+
+
+
+
+

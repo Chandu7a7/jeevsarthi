@@ -25,6 +25,21 @@ import VetPrescriptionPage from '../pages/VetPrescriptionPage';
 import TreatmentHistory from '../pages/TreatmentHistory';
 import { useAuth } from '../context/AuthContext';
 
+// Admin Pages
+import SuperAdminDashboard from '../pages/admin/SuperAdminDashboard';
+import CreateStateAdmin from '../pages/admin/CreateStateAdmin';
+import ManageStateAdmins from '../pages/admin/ManageStateAdmins';
+import StateAdminDashboard from '../pages/admin/StateAdminDashboard';
+import CreateDistrictAdmin from '../pages/admin/CreateDistrictAdmin';
+import DistrictAdminDashboard from '../pages/admin/DistrictAdminDashboard';
+import FarmList from '../pages/admin/FarmList';
+import VeterinariansList from '../pages/admin/VeterinariansList';
+import LabsList from '../pages/admin/LabsList';
+import AIAlerts from '../pages/admin/AIAlerts';
+import BlockchainLogs from '../pages/admin/BlockchainLogs';
+import AdminSettings from '../pages/admin/AdminSettings';
+import ManageDistrictAdmins from '../pages/admin/ManageDistrictAdmins';
+
 // Dashboard Redirect Component
 const DashboardRedirect = () => {
   const { user } = useAuth();
@@ -35,6 +50,12 @@ const DashboardRedirect = () => {
   
   // Redirect based on user role
   switch (user.role) {
+    case 'super_admin':
+      return <Navigate to="/dashboard/admin/super-admin/dashboard" replace />;
+    case 'state_admin':
+      return <Navigate to="/dashboard/admin/state-admin/dashboard" replace />;
+    case 'district_admin':
+      return <Navigate to="/dashboard/admin/district-admin/dashboard" replace />;
     case 'regulator':
       return <Navigate to="/dashboard/regulator" replace />;
     case 'vet':
@@ -261,6 +282,146 @@ const RouterContent = () => {
         element: (
           <ProtectedRoute allowedRoles={['farmer']}>
             <MRLUsageOverview />
+          </ProtectedRoute>
+        ),
+      },
+      // Super Admin Routes
+      {
+        path: 'admin/super-admin/dashboard',
+        element: (
+          <ProtectedRoute allowedRoles={['super_admin']}>
+            <SuperAdminDashboard />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/super-admin/create-state-admin',
+        element: (
+          <ProtectedRoute allowedRoles={['super_admin']}>
+            <CreateStateAdmin />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/super-admin/manage-state-admins',
+        element: (
+          <ProtectedRoute allowedRoles={['super_admin']}>
+            <ManageStateAdmins />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/super-admin/national-analytics',
+        element: (
+          <ProtectedRoute allowedRoles={['super_admin']}>
+            <SuperAdminDashboard />
+          </ProtectedRoute>
+        ),
+      },
+      // State Admin Routes
+      {
+        path: 'admin/state-admin/dashboard',
+        element: (
+          <ProtectedRoute allowedRoles={['state_admin']}>
+            <StateAdminDashboard />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/state-admin/create-district-admin',
+        element: (
+          <ProtectedRoute allowedRoles={['state_admin']}>
+            <CreateDistrictAdmin />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/state-admin/manage-district-admins',
+        element: (
+          <ProtectedRoute allowedRoles={['state_admin']}>
+            <ManageDistrictAdmins />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/state-admin/analytics',
+        element: (
+          <ProtectedRoute allowedRoles={['state_admin']}>
+            <StateAdminDashboard />
+          </ProtectedRoute>
+        ),
+      },
+      // District Admin Routes
+      {
+        path: 'admin/district-admin/dashboard',
+        element: (
+          <ProtectedRoute allowedRoles={['district_admin']}>
+            <DistrictAdminDashboard />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/district-admin/analytics',
+        element: (
+          <ProtectedRoute allowedRoles={['district_admin']}>
+            <DistrictAdminDashboard />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/district-admin/treatment-logs',
+        element: (
+          <ProtectedRoute allowedRoles={['district_admin']}>
+            <TreatmentHistory />
+          </ProtectedRoute>
+        ),
+      },
+      // Shared Admin Routes
+      {
+        path: 'admin/farms',
+        element: (
+          <ProtectedRoute allowedRoles={['super_admin', 'state_admin', 'district_admin']}>
+            <FarmList />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/veterinarians',
+        element: (
+          <ProtectedRoute allowedRoles={['super_admin', 'state_admin', 'district_admin']}>
+            <VeterinariansList />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/labs',
+        element: (
+          <ProtectedRoute allowedRoles={['super_admin', 'state_admin', 'district_admin']}>
+            <LabsList />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/alerts',
+        element: (
+          <ProtectedRoute allowedRoles={['super_admin', 'state_admin', 'district_admin']}>
+            <AIAlerts />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/blockchain-logs',
+        element: (
+          <ProtectedRoute allowedRoles={['super_admin', 'state_admin', 'district_admin']}>
+            <BlockchainLogs />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'admin/settings',
+        element: (
+          <ProtectedRoute allowedRoles={['super_admin', 'state_admin', 'district_admin']}>
+            <AdminSettings />
           </ProtectedRoute>
         ),
       },

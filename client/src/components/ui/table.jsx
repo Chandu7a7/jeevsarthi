@@ -26,7 +26,7 @@ export const TableBody = ({ className = '', children, ...props }) => {
 
 export const TableRow = ({ className = '', children, ...props }) => {
   return (
-    <tr className={`border-b transition-colors hover:bg-gray-50 ${className}`} {...props}>
+    <tr className={`border-b dark:border-gray-700 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800 ${className}`} {...props}>
       {children}
     </tr>
   );
@@ -34,7 +34,7 @@ export const TableRow = ({ className = '', children, ...props }) => {
 
 export const TableHead = ({ className = '', children, ...props }) => {
   return (
-    <th className={`h-12 px-4 text-left align-middle font-medium text-gray-700 ${className}`} {...props}>
+    <th className={`h-12 px-4 text-left align-middle font-medium text-gray-700 dark:text-gray-300 ${className}`} {...props}>
       {children}
     </th>
   );
@@ -42,7 +42,7 @@ export const TableHead = ({ className = '', children, ...props }) => {
 
 export const TableCell = ({ className = '', children, ...props }) => {
   return (
-    <td className={`p-4 align-middle ${className}`} {...props}>
+    <td className={`p-4 align-middle text-gray-900 dark:text-gray-300 ${className}`} {...props}>
       {children}
     </td>
   );

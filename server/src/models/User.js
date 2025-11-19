@@ -26,12 +26,33 @@ const userSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      enum: ['farmer', 'vet', 'lab', 'regulator'],
+      enum: ['farmer', 'vet', 'lab', 'regulator', 'super_admin', 'state_admin', 'district_admin'],
       required: [true, 'Role is required'],
     },
     phone: {
       type: String,
       trim: true,
+    },
+    // Admin hierarchy fields
+    state: {
+      type: String,
+      trim: true,
+      // Required for state_admin and district_admin, optional for others
+    },
+    district: {
+      type: String,
+      trim: true,
+      // Required for district_admin, optional for others
+    },
+    // Track admin hierarchy - who created this admin
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
+    // Track which admin level this is assigned to
+    assignedTo: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
     },
     googleId: {
       type: String,

@@ -31,7 +31,13 @@ const LoginPage = () => {
       const role = userData.role;
 
       // Redirect based on role
-      if (role === 'regulator') {
+      if (role === 'super_admin') {
+        navigate('/dashboard/admin/super-admin/dashboard');
+      } else if (role === 'state_admin') {
+        navigate('/dashboard/admin/state-admin/dashboard');
+      } else if (role === 'district_admin') {
+        navigate('/dashboard/admin/district-admin/dashboard');
+      } else if (role === 'regulator') {
         navigate('/dashboard/regulator');
       } else if (role === 'vet') {
         navigate('/dashboard/vet');
@@ -84,7 +90,13 @@ const LoginPage = () => {
         const role = user.role || "farmer";
 
         // Redirect based on role
-        if (role === "vet") {
+        if (role === "super_admin") {
+          navigate("/dashboard/admin/super-admin/dashboard");
+        } else if (role === "state_admin") {
+          navigate("/dashboard/admin/state-admin/dashboard");
+        } else if (role === "district_admin") {
+          navigate("/dashboard/admin/district-admin/dashboard");
+        } else if (role === "vet") {
           navigate("/dashboard/vet");
         } else if (role === "lab") {
           navigate("/dashboard/lab");

@@ -26,7 +26,10 @@ export const AuthProvider = ({ children }) => {
       if (token) {
         const response = await authAPI.getMe();
         if (response.data && response.data.success && response.data.data) {
-          setUser(response.data.data);
+          const userData = response.data.data;
+          // Update localStorage with fresh user data (includes state/district)
+          localStorage.setItem('user', JSON.stringify(userData));
+          setUser(userData);
           setIsAuthenticated(true);
         } else {
           throw new Error('Invalid response format');

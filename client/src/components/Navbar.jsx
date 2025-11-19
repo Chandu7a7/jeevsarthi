@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md border-b border-gray-200">
+    <nav className="bg-white dark:bg-gray-800 shadow-md border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Left Side - Logo */}
@@ -35,7 +35,7 @@ const Navbar = () => {
               </span>
             </Link>
             {user && (
-              <span className="ml-4 text-sm text-gray-600">
+              <span className="ml-4 text-sm text-gray-600 dark:text-gray-300">
                 {getRoleLabel(user.role)}
               </span>
             )}
@@ -47,7 +47,7 @@ const Navbar = () => {
               {/* Alerts Icon */}
               <Link
                 to="/dashboard/alerts"
-                className="relative p-2 text-gray-600 hover:text-primary-green transition-colors"
+                  className="relative p-2 text-gray-600 dark:text-gray-300 hover:text-primary-green transition-colors"
               >
                 <FiBell className="w-6 h-6" />
                 <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
@@ -57,7 +57,7 @@ const Navbar = () => {
               <div className="relative">
                 <button
                   onClick={() => setShowProfileMenu(!showProfileMenu)}
-                  className="flex items-center space-x-2 p-2 text-gray-600 hover:text-primary-green transition-colors"
+                  className="flex items-center space-x-2 p-2 text-gray-600 dark:text-gray-300 hover:text-primary-green transition-colors"
                 >
                   <FiUser className="w-6 h-6" />
                   {user?.name && (
@@ -68,54 +68,54 @@ const Navbar = () => {
                 </button>
 
                 {showProfileMenu && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+                  <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50 border dark:border-gray-700">
                     {user.role === 'farmer' && (
                       <>
                         <Link
                           to="/dashboard/farmer/profile"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           My Profile
                         </Link>
                         <Link
                           to="/dashboard/farmer/animals/add"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           Add Animal
                         </Link>
                         <Link
                           to="/dashboard/farmer/animals"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           Animals
                         </Link>
                         <Link
                           to="/dashboard/treatment/add"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           Add Treatment
                         </Link>
                         <Link
                           to="/dashboard/alerts"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           Alerts
                         </Link>
                         <Link
                           to="/dashboard/consultation/request"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           Consultation
                         </Link>
                         <Link
                           to="/dashboard/mrl-usage"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           MRL Usage Overview
@@ -126,35 +126,35 @@ const Navbar = () => {
                       <>
                         <Link
                           to="/dashboard/vet"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           Dashboard
                         </Link>
                         <Link
                           to="/dashboard/vet/profile"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           My Profile
                         </Link>
                         <Link
                           to="/dashboard/treatment/add"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           Add Treatment
                         </Link>
                         <Link
                           to="/dashboard/consultation/vet"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           Consultation Requests
                         </Link>
                         <Link
                           to="/dashboard/alerts"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                           onClick={() => setShowProfileMenu(false)}
                         >
                           Alerts
@@ -163,7 +163,7 @@ const Navbar = () => {
                     )}
                     <button
                       onClick={handleLogout}
-                      className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                      className="block w-full text-left px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
                       Logout
                     </button>

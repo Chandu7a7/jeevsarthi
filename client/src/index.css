@@ -6,6 +6,11 @@
   body {
     @apply font-sans antialiased;
   }
+  
+  /* Dark mode base styles */
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
 }
 
 @layer components {

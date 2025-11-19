@@ -4,7 +4,7 @@ export const Card = forwardRef(({ className = '', children, ...props }, ref) => 
   return (
     <div
       ref={ref}
-      className={`bg-white rounded-lg shadow-md ${className}`}
+      className={`bg-white dark:bg-gray-800 rounded-lg shadow-md ${className}`}
       {...props}
     >
       {children}

@@ -1,5 +1,6 @@
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { AuthProvider } from "./context/AuthContext";
+import { DarkModeProvider } from "./context/DarkModeContext";
 import { RouterContent } from "./router";
 import { Toaster } from "react-hot-toast";
 
@@ -15,10 +16,12 @@ function App() {
   // Use empty string if not configured - GoogleLogin components will handle this
   return (
     <GoogleOAuthProvider clientId={googleClientId}>
-      <AuthProvider>
-        <RouterContent />
-        <Toaster position="top-right" />
-      </AuthProvider>
+      <DarkModeProvider>
+        <AuthProvider>
+          <RouterContent />
+          <Toaster position="top-right" />
+        </AuthProvider>
+      </DarkModeProvider>
     </GoogleOAuthProvider>
   );
 }

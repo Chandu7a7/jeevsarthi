@@ -14,6 +14,7 @@ const treatmentRoutes = require('./routes/treatmentRoutes');
 const labRoutes = require('./routes/labRoutes');
 const regulatorRoutes = require('./routes/regulatorRoutes');
 const consultationRoutes = require('./routes/consultationRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
 
@@ -77,6 +78,7 @@ app.use('/api/regulator', regulatorRoutes);
 app.use('/api/consultation', consultationRoutes);
 app.use('/api/animal', require('./routes/animalRoutes'));
 app.use('/api/vet', require('./routes/vetRoutes'));
+app.use('/api/admin', adminRoutes);
 
 // Public route to get animal by Pashu Aadhaar ID (for QR scanning)
 const farmerController = require('./controllers/farmerController');

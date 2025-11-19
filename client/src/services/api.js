@@ -157,5 +157,36 @@ export const consultationAPI = {
     api.patch(`/consultation/${id}/status`, { status }),
 };
 
+// Admin APIs
+export const adminAPI = {
+  // Super Admin
+  getSuperAdminDashboard: () => api.get('/admin/super-admin/dashboard'),
+  createStateAdmin: (data) => api.post('/admin/super-admin/create-state-admin', data),
+  getStateAdmins: (filters) => api.get('/admin/super-admin/state-admins', { params: filters }),
+  updateStateAdmin: (id, data) => api.put(`/admin/super-admin/state-admins/${id}`, data),
+  deleteStateAdmin: (id) => api.delete(`/admin/super-admin/state-admins/${id}`),
+  getNationalAnalytics: () => api.get('/admin/super-admin/national-analytics'),
+  
+  // State Admin
+  getStateAdminDashboard: () => api.get('/admin/state-admin/dashboard'),
+  createDistrictAdmin: (data) => api.post('/admin/state-admin/create-district-admin', data),
+  getDistrictAdmins: (filters) => api.get('/admin/state-admin/district-admins', { params: filters }),
+  updateDistrictAdmin: (id, data) => api.put(`/admin/state-admin/district-admins/${id}`, data),
+  deleteDistrictAdmin: (id) => api.delete(`/admin/state-admin/district-admins/${id}`),
+  getStateAnalytics: () => api.get('/admin/state-admin/analytics'),
+  
+  // District Admin
+  getDistrictAdminDashboard: () => api.get('/admin/district-admin/dashboard'),
+  getDistrictAnalytics: () => api.get('/admin/district-admin/analytics'),
+  getTreatmentLogs: (filters) => api.get('/admin/district-admin/treatment-logs', { params: filters }),
+  
+  // Shared Admin Routes
+  getFarmsList: (filters) => api.get('/admin/farms', { params: filters }),
+  getVeterinariansList: (filters) => api.get('/admin/veterinarians', { params: filters }),
+  getLabsList: (filters) => api.get('/admin/labs', { params: filters }),
+  getAIAlerts: (filters) => api.get('/admin/alerts', { params: filters }),
+  getBlockchainLogs: (filters) => api.get('/admin/blockchain-logs', { params: filters }),
+};
+
 export default api;
 

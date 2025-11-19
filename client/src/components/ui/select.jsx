@@ -60,7 +60,7 @@ export const Select = ({ value, onValueChange, children, className = '' }) => {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={triggerProps.className || "flex h-10 w-full items-center justify-between rounded-[12px] border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#2E7D32] focus:ring-offset-2 focus:border-[#2E7D32] cursor-pointer hover:border-gray-400 transition-colors"}
+        className={triggerProps.className || "flex h-10 w-full items-center justify-between rounded-[12px] border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#2E7D32] focus:ring-offset-2 focus:border-[#2E7D32] cursor-pointer hover:border-gray-400 dark:hover:border-gray-500 transition-colors"}
         id={triggerProps.id}
       >
         <span className="flex-1 text-left">{displayValue}</span>
@@ -74,7 +74,7 @@ export const Select = ({ value, onValueChange, children, className = '' }) => {
             onClick={() => setIsOpen(false)}
           />
           <div className="absolute z-50 w-full mt-1">
-            <div className={contentProps.className || "z-50 w-full overflow-hidden rounded-[12px] border border-gray-200 bg-white shadow-lg"}>
+            <div className={contentProps.className || "z-50 w-full overflow-hidden rounded-[12px] border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg"}>
               {options.map((option, index) => (
                 <div
                   key={index}
@@ -84,8 +84,8 @@ export const Select = ({ value, onValueChange, children, className = '' }) => {
                   }}
                   className={`relative flex cursor-pointer select-none items-center px-3 py-2.5 text-sm outline-none transition-colors ${
                     value === option.value 
-                      ? 'bg-[#2E7D32]/10 text-[#2E7D32] font-medium' 
-                      : 'text-gray-900 hover:bg-gray-50'
+                      ? 'bg-[#2E7D32]/10 dark:bg-[#2E7D32]/20 text-[#2E7D32] dark:text-[#4CAF50] font-medium' 
+                      : 'text-gray-900 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
                   } ${option.className} ${index === 0 ? 'rounded-t-[12px]' : ''} ${index === options.length - 1 ? 'rounded-b-[12px]' : ''}`}
                 >
                   {option.label}

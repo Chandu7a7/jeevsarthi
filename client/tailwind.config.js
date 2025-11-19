@@ -11,12 +11,24 @@ export default {
         primary: {
           green: '#2E7D32',
           blue: '#1976D2',
-          yellow: '#FFF59D',
+          yellow: '#FFC107',
+        },
+        tech: {
+          blue: '#1976D2',
+        },
+        accent: {
+          yellow: '#FFC107',
+        },
+        danger: {
+          red: '#D32F2F',
         },
         alert: {
           safe: '#4CAF50',
           warning: '#FFC107',
-          violation: '#F44336',
+          violation: '#D32F2F',
+        },
+        bg: {
+          light: '#F9FAFB',
         },
       },
       fontFamily: {
